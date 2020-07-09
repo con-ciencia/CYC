@@ -1,0 +1,62 @@
+<%= form_with(model: subsidio, local: true) do |form| %>
+  <% if subsidio.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(subsidio.errors.count, "error") %> prohibited this subsidio from being saved:</h2>
+
+      <ul>
+      <% subsidio.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nombre %>
+    <%= form.text_field :nombre, id: :subsidio_nombre %>
+  </div>
+
+  <div class="field">
+    <%= form.label :institucion %>
+    <%= form.text_field :institucion, id: :subsidio_institucion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :descripcion %>
+    <%= form.text_area :descripcion, id: :subsidio_descripcion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :modalidad %>
+    <%= form.text_field :modalidad, id: :subsidio_modalidad %>
+  </div>
+
+  <div class="field">
+    <%= form.label :inicio %>
+    <%= form.datetime_select :inicio, id: :subsidio_inicio %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cierre %>
+    <%= form.datetime_select :cierre, id: :subsidio_cierre %>
+  </div>
+
+  <div class="field">
+    <%= form.label :monto %>
+    <%= form.text_field :monto, id: :subsidio_monto %>
+  </div>
+
+  <div class="field">
+    <%= form.label :perfil %>
+    <%= form.text_area :perfil, id: :subsidio_perfil %>
+  </div>
+
+  <div class="field">
+    <%= form.label :bases %>
+    <%= form.text_field :bases, id: :subsidio_bases %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

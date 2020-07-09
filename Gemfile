@@ -4,8 +4,20 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
-
-
+gem 'geocoder'
+gem 'gmaps4rails'
+gem 'jquery-rails'
+gem 'font-awesome-rails'
+gem 'groupdate'
+gem 'rolify'
+gem 'acts_as_votable', '~> 0.11.1'
+gem 'bootstrap', '~> 4.3.1'
+gem 'cancancan'
+gem 'carrierwave', '~> 1.0'
+gem 'chartkick'
+gem 'omniauth-google-oauth2'
+gem 'dotenv-rails', groups: [:development, :test]
+gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.7'
 # Use postgresql as the database for Active Record

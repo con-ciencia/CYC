@@ -1,0 +1,44 @@
+<div class="container" id="dashboard">
+    <h2>Dashboard Administrador</h2>
+    <div class='container'>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="container">
+                <h4><strong>Usuarios por fecha</strong></h4>
+                <%= line_chart User.group_by_day(:created_at).count %>    
+                </div>
+                <br>
+            </div>  
+            <div class="col-sm-6"> 
+                <div class="container">
+                <h4><strong>Alumnos por curso</strong></h4>
+                <%= pie_chart Course.joins(:students).group('courses.name').count %>    
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row"> 
+            <div class="col-sm-6"> 
+                <div class="container">
+                <h4><strong>Eventos por curso</strong></h4>
+                <%= pie_chart Course.joins(:events).group('courses.name').count %>    
+                </div>
+            </div>  
+            <div class="col-sm-6"> 
+                <div class="container">
+                <h4><strong>Salas de estudio por campus</strong></h4>
+                <%= pie_chart Campu.joins(:classrooms).group('campus.name').count %>    
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row"> 
+            <div class="col-sm-6"> 
+                <div class="container">
+                <h4><strong>Publicaciones por hora del día</strong></h4>
+                <%= area_chart Post.group_by_hour_of_day(:created_at).count %> 
+                </div>  
+            </div>   
+        </div>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: MyString
+  etapa: MyString
+  descripcion: MyText
+  proposito: MyString
+  web: MyString
+  user: one
+
+two:
+  nombre: MyString
+  etapa: MyString
+  descripcion: MyText
+  proposito: MyString
+  web: MyString
+  user: two
